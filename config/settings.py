@@ -2,11 +2,25 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 
-# Load environment variables from .env file if it exists
-load_dotenv()
-
 # Base Directories
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Load environment variables from .env file if it exists
+# We check both the application base directory and its parent directory (workspace root)
+env_paths = [
+    BASE_DIR / ".env",
+    BASE_DIR.parent / ".env",
+]
+env_loaded = False
+for env_path in env_paths:
+    if env_path.exists():
+        load_dotenv(env_path)
+        env_loaded = True
+        break
+
+if not env_loaded:
+    load_dotenv()
+
 
 # Application UI Settings
 APP_TITLE = "AI Interview Assistant"

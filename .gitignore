@@ -1,0 +1,41 @@
+# Virtual environments
+venv/
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Environment variables
+.env
+
+# VS Code
+.vscode/
+
+# Streamlit cache
+.streamlit/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Build
+dist/
+build/
+
+# Logs
+*.log
+
+# Pytest
+.pytest_cache/
+
+# Mypy
+.mypy_cache/
+
+# IDE
+.idea/
+
+# Temporary files
+*.tmp
