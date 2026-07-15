@@ -726,7 +726,7 @@ with st.sidebar:
     elif not session.is_completed:
         phase = "Interview Room"
         curr_idx = session.current_question_index
-        total_q = len(session.questions)
+        total_q = DEFAULT_QUESTION_COUNT
         progress_pct = int((curr_idx / total_q) * 100)
         progress_text = f"Question {curr_idx + 1} of {total_q}"
         stats_html = f"""
@@ -1255,7 +1255,7 @@ else:
         )
         
         # Progress bar and stats
-        progress_val = min(session.current_question_index / len(session.questions), 1.0)
+        progress_val = min(session.current_question_index / DEFAULT_QUESTION_COUNT, 1.0)
         st.progress(progress_val)
         
         current_q = session.questions[session.current_question_index]
@@ -1279,10 +1279,23 @@ else:
                 )
         
         # Display current question with rich UI
-        q_idx = session.current_question_index
-        difficulty = "Easy" if q_idx < 2 else ("Medium" if q_idx < 5 else "Hard")
-        difficulty_color = "#22C55E" if difficulty == "Easy" else ("#F59E0B" if difficulty == "Medium" else "#EF4444")
-        est_time = "2-3 min" if difficulty == "Easy" else ("3-4 min" if difficulty == "Medium" else "4-5 min")
+        state = st.session_state.get("interview_state")
+        difficulty = state.current_difficulty if state else "Medium"
+        difficulty_color = (
+            "#22C55E" if difficulty == "Easy" 
+            else ("#F59E0B" if difficulty == "Medium" 
+                  else ("#EF4444" if difficulty == "Hard" else "#A855F7"))
+        )
+        rgba_color = (
+            "34, 197, 94" if difficulty == "Easy"
+            else ("245, 158, 11" if difficulty == "Medium"
+                  else ("239, 68, 68" if difficulty == "Hard" else "168, 85, 247"))
+        )
+        est_time = (
+            "2-3 min" if difficulty == "Easy" 
+            else ("3-4 min" if difficulty == "Medium" 
+                  else ("4-5 min" if difficulty == "Hard" else "5-6 min"))
+        )
         
         # Animated AI Avatar SVG
         ai_icon_svg = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 1 10 10c0 5.523-4.477 10-10 10S2 17.523 2 12A10 10 0 0 1 12 2z"/><path d="M12 6v6l4 2"/></svg>'
@@ -1296,7 +1309,7 @@ else:
 <span>Interview AI</span>
 </div>
 <div style="display: flex; gap: 8px;">
-<span class="meta-badge" style="color: {difficulty_color}; border-color: rgba({difficulty_color == '#22C55E' and '34, 197, 94' or (difficulty_color == '#F59E0B' and '245, 158, 11' or '239, 68, 68')}, 0.25); background: rgba({difficulty_color == '#22C55E' and '34, 197, 94' or (difficulty_color == '#F59E0B' and '245, 158, 11' or '239, 68, 68')}, 0.05);">{difficulty}</span>
+<span class="meta-badge" style="color: {difficulty_color}; border-color: rgba({rgba_color}, 0.25); background: rgba({rgba_color}, 0.05);">{difficulty}</span>
 <span class="meta-badge">⏱️ {est_time}</span>
 </div>
 </div>
