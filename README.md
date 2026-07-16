@@ -314,37 +314,35 @@ Performance Report
 
 ---
 
-# 📷 Screenshots
+# 📸 Screenshots
 
 ## Resume Upload
 
-> *(Add Screenshot Here)*
+![Resume Upload](screenshots/resume-upload.png)
 
 ---
 
 ## Candidate Profile
 
-> *(Add Screenshot Here)*
+![Candidate Profile](screenshots/candidate-profile.png)
 
 ---
 
 ## Technical Interview
 
-> *(Add Screenshot Here)*
+![Technical Interview](screenshots/interview-room.png)
 
 ---
 
 ## Adaptive Difficulty
 
-> *(Add Screenshot Here)*
+![Adaptive Difficulty](screenshots/adaptive-difficulty.png)
 
 ---
 
 ## Final Evaluation Report
 
-> *(Add Screenshot Here)*
-
----
+![Final Report](screenshots/final-report.png)
 
 # 🚀 Installation
 
