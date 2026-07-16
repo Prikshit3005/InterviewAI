@@ -39,3 +39,6 @@ build/
 
 # Temporary files
 *.tmp
+
+# test file
+test_gemini.py
