@@ -1,0 +1,491 @@
+{
+  "candidate_profile": {
+    "name": "PRIKSHIT SHARMA",
+    "email": "psharma12be23@thapar.edu",
+    "skills": [
+      "C++",
+      "Python",
+      "SQL",
+      "Data Structures & Algorithms",
+      "OOP",
+      "Git",
+      "REST APIs",
+      "Linux/Windows",
+      "MATLAB",
+      "FPGA (Basic)",
+      "NumPy",
+      "Pandas",
+      "Problem Solving (300+ LeetCode)",
+      "Debugging",
+      "SDLC Basics"
+    ],
+    "education": [
+      "Thapar Institute of Engineering and Technology, Patiala 2023–2027 B.E. in Electronics and Computer Science",
+      "BCM School, Sec-32A, Ludhiana 2022–2023 Class XII (CBSE)"
+    ],
+    "projects": [
+      "5-Bit Shift Register on FPGA (Verilog, Xilinx ISE)",
+      "Secure Cloud-Based File Storage System (AWS EC2, S3)",
+      "Movie Recommendation System (Python, Pandas)"
+    ]
+  },
+  "interview_session": {
+    "session_id": "3ab32ebc-c844-4893-aac9-043d759e3732",
+    "candidate_profile": {
+      "name": "PRIKSHIT SHARMA",
+      "email": "psharma12be23@thapar.edu",
+      "skills": [
+        "C++",
+        "Python",
+        "SQL",
+        "Data Structures & Algorithms",
+        "OOP",
+        "Git",
+        "REST APIs",
+        "Linux/Windows",
+        "MATLAB",
+        "FPGA (Basic)",
+        "NumPy",
+        "Pandas",
+        "Problem Solving (300+ LeetCode)",
+        "Debugging",
+        "SDLC Basics"
+      ],
+      "education": [
+        "Thapar Institute of Engineering and Technology, Patiala 2023–2027 B.E. in Electronics and Computer Science",
+        "BCM School, Sec-32A, Ludhiana 2022–2023 Class XII (CBSE)"
+      ],
+      "projects": [
+        "5-Bit Shift Register on FPGA (Verilog, Xilinx ISE)",
+        "Secure Cloud-Based File Storage System (AWS EC2, S3)",
+        "Movie Recommendation System (Python, Pandas)"
+      ]
+    },
+    "questions": [
+      {
+        "id": "Q1",
+        "text": "In your Secure Cloud-Based File Storage System project, detail the architecture you designed to ensure data security and integrity. Specifically, explain the complete data lifecycle from a user initiating an upload to its retrieval, highlighting the security mechanisms implemented at each stage. This should include how you handled authentication, authorization, data encryption (both in-transit and at-rest), and how AWS EC2 and S3 services were integrated to provide these security features. Furthermore, discuss any specific security challenges or trade-offs you encountered and how you addressed them.",
+        "category": "Resume & Projects",
+        "topic": "Cloud Architecture and Security Design"
+      },
+      {
+        "id": "Q2",
+        "text": "Considering your Secure Cloud-Based File Storage System, how would you evolve its architecture to support petabytes of data and millions of concurrent users globally? Detail your approach to ensuring high availability, disaster recovery, and strong data consistency across multiple AWS regions. Furthermore, identify and explain any new security challenges that emerge at this scale and how your design would mitigate them.",
+        "category": "Resume & Projects",
+        "topic": "Large-Scale Distributed System Design, High Availability, Disaster Recovery, Multi-Region Data Consistency, Advanced Cloud Security"
+      },
+      {
+        "id": "Q3",
+        "text": "You mentioned using DynamoDB Global Tables for multi-region consistency. Can you elaborate on the specific consistency model DynamoDB Global Tables provide and how that choice impacts your application's design, especially for critical operations? Furthermore, considering S3's eventual consistency model, how would you architect your system to ensure data integrity and strong consistency for metadata or critical file operations that rely on S3 data being immediately available and consistent across regions?",
+        "category": "Resume & Projects",
+        "topic": "Distributed Data Consistency Models, Multi-Region Architecture Trade-offs"
+      },
+      {
+        "id": "Q4",
+        "text": "Considering the deployment of a large-scale, real-time recommendation system (like your Movie Recommendation System, but scaled globally), how would you design an MLOps pipeline to ensure continuous model improvement, low-latency inference, and handle data drift effectively across multiple geographic regions? Specifically, discuss strategies for distributed model training, A/B testing in production, and mechanisms for automated model retraining and deployment without service interruption.",
+        "category": "AI/ML",
+        "topic": "Large-Scale MLOps, Distributed ML, Real-time Inference, Data Drift, A/B Testing"
+      },
+      {
+        "id": "Q5",
+        "text": "In your Movie Recommendation System, you likely encountered challenges beyond just basic collaborative filtering. Can you explain the 'cold start problem' and 'data sparsity' in the context of recommendation systems? How would you design a hybrid recommendation system that effectively addresses these issues, combining different approaches to provide robust recommendations even for new users or items, and what are the trade-offs involved in such a hybrid approach?",
+        "category": "AI/ML",
+        "topic": "Recommendation Systems, Cold Start, Data Sparsity, Hybrid Models"
+      },
+      {
+        "id": "Q6",
+        "text": "Design a high-performance, thread-safe in-memory cache with a configurable eviction policy (e.g., LRU, LFU). Detail the data structures you would use, the synchronization mechanisms required to handle concurrent access efficiently, and how you would manage memory and prevent common concurrency issues like deadlocks or race conditions. Discuss the trade-offs between different eviction policies and their impact on cache performance under various workloads.",
+        "category": "Software Engineering",
+        "topic": "Concurrency, Caching, Data Structures, System Design"
+      },
+      {
+        "id": "Q7",
+        "text": "Design a highly available and scalable distributed rate limiter that can handle millions of requests per second across multiple service instances. Explain the algorithms you would consider (e.g., Leaky Bucket, Token Bucket), how you would manage the state of the rate limiter across distributed nodes, and the trade-offs involved in ensuring both accuracy and performance. Discuss potential failure scenarios and how your design would gracefully handle them.",
+        "category": "Software Engineering",
+        "topic": "Distributed Systems, Concurrency, System Design, Rate Limiting"
+      },
+      {
+        "id": "Q8",
+        "text": "Given a binary tree, design an algorithm to find the lowest common ancestor (LCA) of two given nodes, `p` and `q`. Your algorithm should handle cases where `p` or `q` might not be present in the tree, or if one is an ancestor of the other. Analyze the time and space complexity of your solution.",
+        "category": "DSA & CS Fundamentals",
+        "topic": "Trees, Lowest Common Ancestor (LCA), Algorithms"
+      }
+    ],
+    "history": [
+      {
+        "question": {
+          "id": "Q1",
+          "text": "In your Secure Cloud-Based File Storage System project, detail the architecture you designed to ensure data security and integrity. Specifically, explain the complete data lifecycle from a user initiating an upload to its retrieval, highlighting the security mechanisms implemented at each stage. This should include how you handled authentication, authorization, data encryption (both in-transit and at-rest), and how AWS EC2 and S3 services were integrated to provide these security features. Furthermore, discuss any specific security challenges or trade-offs you encountered and how you addressed them.",
+          "category": "Resume & Projects",
+          "topic": "Cloud Architecture and Security Design"
+        },
+        "user_answer": "For the Secure Cloud-Based File Storage System, the architecture employs HTTPS for secure data in-transit, utilizing TLS 1.3 protocol. User authentication and authorization are managed through AWS Cognito, issuing JWT tokens. Upon upload, data flows to AWS EC2 instances running behind an Application Load Balancer. The EC2 instance intercepts the file, validates the user's JWT token, and computes a SHA-256 checksum to ensure integrity. The file is then encrypted on the EC2 instance using AES-256 encryption via AWS Key Management Service (KMS) customer-managed keys before being written to an AWS S3 bucket. The S3 bucket is configured with private access control lists, block public access enabled, and server-side encryption with KMS keys (SSE-KMS) as a secondary defense layer. For retrieval, the user requests a pre-signed URL with a short expiration window (e.g., 15 minutes) generated via the EC2 API, ensuring temporary, authorized direct download from S3. Trade-offs included latency overhead due to double encryption layers, which was mitigated by tuning thread pools on EC2.",
+        "evaluation": {
+          "score": 5,
+          "accuracy_feedback": "All technical details provided were accurate and correctly applied to the scenario.",
+          "depth_feedback": "Demonstrated excellent depth by explaining specific protocols (TLS 1.3), algorithms (SHA-256, AES-256), and AWS service integrations (Cognito, KMS, S3 SSE-KMS, pre-signed URLs) with their security implications. Discussed a relevant trade-off (latency from double encryption).",
+          "clarity_feedback": "The explanation was very clear, logical, and used professional terminology effectively.",
+          "completeness_feedback": "The answer comprehensively covered all aspects of the question, including authentication, authorization, encryption (in-transit and at-rest), EC2/S3 integration, data lifecycle, and security challenges/trade-offs.",
+          "strengths": [
+            "Detailed explanation of data lifecycle with security mechanisms.",
+            "Correct identification and application of AWS services for security (Cognito, KMS, S3 features).",
+            "Understanding of encryption protocols and integrity checks.",
+            "Ability to discuss trade-offs in security design."
+          ],
+          "weaknesses": []
+        }
+      },
+      {
+        "question": {
+          "id": "Q2",
+          "text": "Considering your Secure Cloud-Based File Storage System, how would you evolve its architecture to support petabytes of data and millions of concurrent users globally? Detail your approach to ensuring high availability, disaster recovery, and strong data consistency across multiple AWS regions. Furthermore, identify and explain any new security challenges that emerge at this scale and how your design would mitigate them.",
+          "category": "Resume & Projects",
+          "topic": "Large-Scale Distributed System Design, High Availability, Disaster Recovery, Multi-Region Data Consistency, Advanced Cloud Security"
+        },
+        "user_answer": "To support millions of users globally and petabytes of data, I would use multi-region deployment. I would use Route 53 for geo-routing to direct users to the closest AWS region. S3 cross-region replication can copy the data across regions for disaster recovery. For database consistency, I would use Amazon DynamoDB global tables. Security challenges would include managing encryption keys globally, which I would handle using multi-region AWS KMS keys.",
+        "evaluation": {
+          "score": 4,
+          "accuracy_feedback": "All mentioned AWS services and strategies (Route 53, S3 cross-region replication, DynamoDB global tables, multi-region KMS) are technically accurate for achieving the stated goals.",
+          "depth_feedback": "Provided good depth by identifying specific AWS services for each requirement (geo-routing, DR, consistency, key management). Could have elaborated slightly more on the *mechanisms* of S3 CRR for DR or DynamoDB global tables for consistency beyond just naming the service.",
+          "clarity_feedback": "The explanation was concise and clear, directly addressing the scalability and global deployment aspects.",
+          "completeness_feedback": "Addressed all key aspects: petabytes of data, millions of users, high availability, disaster recovery, strong data consistency, and new security challenges (key management).",
+          "strengths": [
+            "Correctly identified AWS services for global scale and high availability.",
+            "Understood the need for multi-region deployment and geo-routing.",
+            "Addressed global key management as a security challenge."
+          ],
+          "weaknesses": [
+            "Could have provided slightly more detail on the underlying mechanisms of S3 cross-region replication and DynamoDB global tables for consistency."
+          ]
+        }
+      },
+      {
+        "question": {
+          "id": "Q3",
+          "text": "You mentioned using DynamoDB Global Tables for multi-region consistency. Can you elaborate on the specific consistency model DynamoDB Global Tables provide and how that choice impacts your application's design, especially for critical operations? Furthermore, considering S3's eventual consistency model, how would you architect your system to ensure data integrity and strong consistency for metadata or critical file operations that rely on S3 data being immediately available and consistent across regions?",
+          "category": "Resume & Projects",
+          "topic": "Distributed Data Consistency Models, Multi-Region Architecture Trade-offs"
+        },
+        "user_answer": "DynamoDB Global Tables provide active-active replication across selected AWS regions, employing a 'Last Writer Wins' (LWW) conflict resolution policy based on system timestamps. This means local writes are immediately consistent locally (supporting strongly consistent reads if requested in the local region), but replication to other regions is eventually consistent (typically sub-second). For critical operations like transaction validation, this requires designing idempotent APIs and using unique transaction identifiers to detect conflicts. To address S3's consistency model, we leverage the fact that Amazon S3 now offers strong read-after-write consistency for PUT and DELETE operations of objects in all buckets by default. However, for multi-region cross-region replication (CRR), replication is eventual. To ensure immediate global consistency of critical file metadata, we do not read directly from the S3 replica in the secondary region. Instead, we write and read metadata from a single source of truth - the DynamoDB global tables. When a file is uploaded to the primary S3 bucket, its metadata (including checksum, version ID, and upload status) is written to DynamoDB. Secondary regions read metadata from DynamoDB first; if they need to fetch the file, they use the S3 version ID. If a replica is not yet available in the secondary region's S3, the application falls back to fetching the object from the primary region's S3 bucket using a cross-region read, ensuring 100% read consistency at the expense of temporary latency.",
+        "evaluation": {
+          "score": 5,
+          "accuracy_feedback": "The explanation of DynamoDB Global Tables' consistency model (active-active, Last Writer Wins, system timestamps, local strong consistency, eventual replication) was highly accurate. The understanding of S3's consistency (strong read-after-write for PUT/DELETE, eventual for CRR) was also correct.",
+          "depth_feedback": "Demonstrated excellent depth by explaining the implications of LWW (idempotent APIs, unique IDs) and proposing a robust solution for S3 metadata consistency using DynamoDB as a single source of truth, with a cross-region read fallback for file objects. This shows a deep understanding of distributed consistency trade-offs.",
+          "clarity_feedback": "The explanation was exceptionally clear, well-structured, and effectively communicated complex distributed consistency concepts.",
+          "completeness_feedback": "Fully addressed both DynamoDB's consistency model and its impact, as well as S3's eventual consistency and a detailed architectural solution for ensuring data integrity and strong consistency for critical metadata across regions.",
+          "strengths": [
+            "Deep understanding of DynamoDB Global Tables' LWW consistency model and its implications.",
+            "Accurate differentiation of S3's consistency models (single-region vs. cross-region).",
+            "Provided a sophisticated solution for multi-region metadata consistency using DynamoDB and cross-region S3 reads as a fallback."
+          ],
+          "weaknesses": []
+        }
+      },
+      {
+        "question": {
+          "id": "Q4",
+          "text": "Considering the deployment of a large-scale, real-time recommendation system (like your Movie Recommendation System, but scaled globally), how would you design an MLOps pipeline to ensure continuous model improvement, low-latency inference, and handle data drift effectively across multiple geographic regions? Specifically, discuss strategies for distributed model training, A/B testing in production, and mechanisms for automated model retraining and deployment without service interruption.",
+          "category": "AI/ML",
+          "topic": "Large-Scale MLOps, Distributed ML, Real-time Inference, Data Drift, A/B Testing"
+        },
+        "user_answer": "I would train the model locally using Python and then save it to a file. Then I will upload the file to a server and load it in python. If the model becomes old, I will manually run the training script again to update the model. I don't know much about A/B testing or distributed model training.",
+        "evaluation": {
+          "score": 1,
+          "accuracy_feedback": "The description of training locally and manually uploading/retraining is technically accurate for a very basic, non-MLOps workflow, but it completely misses the advanced requirements of the question.",
+          "depth_feedback": "Extremely shallow. The answer demonstrates a fundamental lack of knowledge regarding MLOps, distributed model training, automated deployment, A/B testing, and data drift handling.",
+          "clarity_feedback": "The answer was clear in its simplicity and direct admission of lacking knowledge on key aspects.",
+          "completeness_feedback": "Failed to address almost all core aspects of the question, including continuous model improvement, low-latency inference, data drift, distributed training, A/B testing, and automated deployment.",
+          "strengths": [],
+          "weaknesses": [
+            "No understanding of MLOps pipelines.",
+            "Lack of knowledge on distributed model training.",
+            "Unfamiliarity with A/B testing in production for ML models.",
+            "No strategy for automated model retraining and deployment.",
+            "Did not address data drift effectively."
+          ]
+        }
+      },
+      {
+        "question": {
+          "id": "Q5",
+          "text": "In your Movie Recommendation System, you likely encountered challenges beyond just basic collaborative filtering. Can you explain the 'cold start problem' and 'data sparsity' in the context of recommendation systems? How would you design a hybrid recommendation system that effectively addresses these issues, combining different approaches to provide robust recommendations even for new users or items, and what are the trade-offs involved in such a hybrid approach?",
+          "category": "AI/ML",
+          "topic": "Recommendation Systems, Cold Start, Data Sparsity, Hybrid Models"
+        },
+        "user_answer": "The cold start problem occurs when a new user or item enters the system, lacking historical interaction data (ratings/clicks) to compute collaborative filtering recommendations. Data sparsity refers to the challenge where the user-item interaction matrix is extremely sparse (often >99.9% empty), making it hard to find similar users or items. To address these, I would design a hybrid recommendation system combining Collaborative Filtering (CF) and Content-Based Filtering (CBF). For new items, a CBF model extracts features (e.g., movie genre, cast, plot embeddings using BERT) to match against user profiles. For new users, a heuristic-based active learning step (asking preferences during onboarding) creates an initial user profile, supplemented by demographic filtering. The hybrid system combines CF and CBF using a late fusion stacking model: a Gradient Boosted Decision Tree (GBDT) or a neural network that takes the prediction scores of both CF and CBF as inputs, alongside contextual features (time of day, device). Trade-offs include increased computational complexity, latency in real-time inference, and the need to maintain duplicate feature stores for content metadata and interaction logs.",
+        "evaluation": {
+          "score": 5,
+          "accuracy_feedback": "The definitions of cold start and data sparsity were accurate. The proposed hybrid system combining CF and CBF, including specific techniques like BERT embeddings, active learning, and a late fusion stacking model (GBDT/NN), is technically sound and advanced.",
+          "depth_feedback": "Demonstrated excellent depth by not only defining the problems but also providing specific, advanced solutions for both new users and new items. The discussion of a late fusion stacking model with contextual features shows a sophisticated understanding. Trade-offs were also well-articulated.",
+          "clarity_feedback": "The explanation was very clear, well-structured, and easy to follow, using appropriate technical terms.",
+          "completeness_feedback": "Fully addressed the cold start problem, data sparsity, the design of a hybrid recommendation system, and the associated trade-offs.",
+          "strengths": [
+            "Clear and accurate definitions of cold start and data sparsity.",
+            "Proposed a robust hybrid recommendation system combining CF and CBF.",
+            "Identified advanced techniques like BERT embeddings and active learning for specific cold start scenarios.",
+            "Understood and explained late fusion stacking models with contextual features.",
+            "Articulated relevant trade-offs (complexity, latency, feature stores)."
+          ],
+          "weaknesses": []
+        }
+      },
+      {
+        "question": {
+          "id": "Q6",
+          "text": "Design a high-performance, thread-safe in-memory cache with a configurable eviction policy (e.g., LRU, LFU). Detail the data structures you would use, the synchronization mechanisms required to handle concurrent access efficiently, and how you would manage memory and prevent common concurrency issues like deadlocks or race conditions. Discuss the trade-offs between different eviction policies and their impact on cache performance under various workloads.",
+          "category": "Software Engineering",
+          "topic": "Concurrency, Caching, Data Structures, System Design"
+        },
+        "user_answer": "To design a thread-safe in-memory cache, I would use a hash map combined with a doubly linked list for LRU eviction. To make it thread-safe, I can use a programming language's built-in concurrent map or wrap access in mutex locks. To implement LFU, I would need a frequency map instead. Synchronization can be done using a reader-writer lock (shared lock for reads, exclusive lock for writes) to allow concurrent reads. The trade-off is that mutexes can slow down performance under high concurrent writes.",
+        "evaluation": {
+          "score": 3,
+          "accuracy_feedback": "The core data structures (hash map, doubly linked list for LRU, frequency map for LFU) and synchronization mechanisms (mutexes, reader-writer locks) are technically correct for building a thread-safe cache.",
+          "depth_feedback": "Provided a good foundation but lacked depth in several areas. While identifying the structures and locks, it didn't fully elaborate on *how* LRU/LFU are implemented with these structures (e.g., node movement in DLL for LRU, or more complex LFU structures). It also lacked detail on memory management, preventing deadlocks/race conditions beyond 'use locks,' and a deeper discussion of eviction policy impact.",
+          "clarity_feedback": "The explanation was clear and concise for the points covered.",
+          "completeness_feedback": "Covered data structures and basic synchronization mechanisms, but was incomplete regarding memory management, detailed prevention of concurrency issues (deadlocks, specific race conditions), and a comprehensive discussion of eviction policy trade-offs.",
+          "strengths": [
+            "Correctly identified data structures for LRU and LFU.",
+            "Understood basic thread-safety mechanisms (mutexes, reader-writer locks).",
+            "Recognized the performance trade-off of mutexes under high write contention."
+          ],
+          "weaknesses": [
+            "Lacked detailed implementation specifics for LRU/LFU eviction logic.",
+            "Did not discuss memory management strategies for the cache.",
+            "Insufficient detail on preventing deadlocks or specific race conditions.",
+            "Limited discussion on the impact of different eviction policies on cache performance under various workloads."
+          ]
+        }
+      },
+      {
+        "question": {
+          "id": "Q7",
+          "text": "Design a highly available and scalable distributed rate limiter that can handle millions of requests per second across multiple service instances. Explain the algorithms you would consider (e.g., Leaky Bucket, Token Bucket), how you would manage the state of the rate limiter across distributed nodes, and the trade-offs involved in ensuring both accuracy and performance. Discuss potential failure scenarios and how your design would gracefully handle them.",
+          "category": "Software Engineering",
+          "topic": "Distributed Systems, Concurrency, System Design, Rate Limiting"
+        },
+        "user_answer": "I would use an if statement inside a loop to check if the count is greater than 10. If it is, I will print access denied. I don't know how to distribute it across servers.",
+        "evaluation": {
+          "score": 1,
+          "accuracy_feedback": "The proposed 'if statement inside a loop' is a rudimentary, single-instance rate limiter, but it fails to address the 'distributed, highly available, scalable' requirements of the question.",
+          "depth_feedback": "Extremely shallow. The candidate explicitly stated a lack of knowledge regarding distributing the rate limiter across servers, indicating a fundamental gap in understanding distributed systems and advanced rate limiting algorithms.",
+          "clarity_feedback": "The answer was clear in its simplicity and direct admission of lacking knowledge.",
+          "completeness_feedback": "Failed to address almost all core aspects of the question, including distributed nature, high availability, scalability, specific algorithms (Leaky Bucket, Token Bucket), state management across nodes, trade-offs, and failure scenarios.",
+          "strengths": [],
+          "weaknesses": [
+            "No understanding of distributed rate limiting.",
+            "Unfamiliarity with common rate limiting algorithms (Leaky Bucket, Token Bucket).",
+            "Lack of knowledge on managing state across distributed nodes.",
+            "Did not address high availability, scalability, or failure scenarios."
+          ]
+        }
+      },
+      {
+        "question": {
+          "id": "Q8",
+          "text": "Given a binary tree, design an algorithm to find the lowest common ancestor (LCA) of two given nodes, `p` and `q`. Your algorithm should handle cases where `p` or `q` might not be present in the tree, or if one is an ancestor of the other. Analyze the time and space complexity of your solution.",
+          "category": "DSA & CS Fundamentals",
+          "topic": "Trees, Lowest Common Ancestor (LCA), Algorithms"
+        },
+        "user_answer": "To find the Lowest Common Ancestor (LCA) of two nodes p and q in a binary tree where one or both nodes might be missing, a standard post-order traversal DFS is insufficient because it cannot distinguish between 'node not found' and 'LCA not found' without scanning the entire tree. We use a two-pass approach or a single pass that returns a custom result object. In a single-pass DFS, we return a tuple/object containing three flags: found_p, found_q, and the lca_node. For any subtree: we check if the current node is p or q and query the left and right subtrees. The left subtree returns (left_p, left_q, left_lca) and the right subtree returns (right_p, right_q, right_lca). The current node's flags are updated: curr_p = left_p or right_p or (node == p) and curr_q = left_q or right_q or (node == q). If left_lca is already found, we propagate it up; same for right_lca. If both curr_p and curr_q become true at the current node for the first time, then the current node is the LCA. The time complexity is O(N) where N is the number of nodes in the binary tree, as we visit each node at most once. The space complexity is O(H) where H is the height of the tree, due to the recursion stack (which is O(N) in the worst case of a skewed tree, and O(log N) for a balanced tree).",
+        "evaluation": {
+          "score": 5,
+          "accuracy_feedback": "The algorithm described for finding the LCA using a single-pass DFS with flags (found_p, found_q) and an LCA node is technically accurate and robust, correctly handling edge cases.",
+          "depth_feedback": "Demonstrated excellent depth by providing a detailed algorithmic approach, including the specific return values (tuple/object with flags and LCA node) and the logic for combining results from subtrees. The complexity analysis (O(N) time, O(H) space) was also accurate and well-explained.",
+          "clarity_feedback": "The explanation was very clear, well-structured, and easy to understand, effectively conveying the algorithm's logic.",
+          "completeness_feedback": "Fully addressed the algorithm design, handling cases where nodes might be missing or one is an ancestor, and provided a complete time and space complexity analysis.",
+          "strengths": [
+            "Correctly identified the need for a single-pass DFS with specific return values.",
+            "Provided a robust algorithm that handles various edge cases (missing nodes, ancestor-descendant relationship).",
+            "Accurate and well-explained time and space complexity analysis."
+          ],
+          "weaknesses": []
+        }
+      }
+    ],
+    "current_question_index": 8,
+    "is_completed": true,
+    "report": {
+      "overall_score": 72.5,
+      "category_scores": [
+        {
+          "category": "Resume & Projects",
+          "score": 93.3
+        },
+        {
+          "category": "AI/ML",
+          "score": 60.0
+        },
+        {
+          "category": "Software Engineering",
+          "score": 40.0
+        },
+        {
+          "category": "DSA & CS Fundamentals",
+          "score": 100.0
+        }
+      ],
+      "strengths": [
+        "Strong understanding of cloud architecture and security design, particularly with AWS services (EC2, S3, Cognito, KMS, Route 53, DynamoDB).",
+        "Excellent grasp of distributed system concepts, including multi-region deployment, high availability, disaster recovery, and complex data consistency models (e.g., DynamoDB Global Tables, S3 consistency).",
+        "Proficient in implementing security mechanisms such as encryption (in-transit and at-rest), authentication, authorization, and data integrity checks.",
+        "Solid knowledge of recommendation systems, including advanced topics like cold start, data sparsity, hybrid models (CF, CBF), and late fusion techniques.",
+        "Good understanding of fundamental data structures and algorithms, demonstrated by a clear and correct LCA solution.",
+        "Ability to articulate technical trade-offs in system design."
+      ],
+      "weaknesses": [
+        "Significant gaps in MLOps and large-scale machine learning deployment, including distributed model training, automated retraining, A/B testing, and handling data drift.",
+        "Lack of knowledge in designing highly available and scalable distributed rate limiters and managing state across distributed nodes.",
+        "Limited depth in advanced concurrency control mechanisms and memory management for custom in-memory caches beyond basic locking."
+      ],
+      "suggestions": [
+        "Study MLOps principles, pipelines, and tools (e.g., Kubeflow, MLflow, AWS SageMaker) to understand continuous model improvement, automated deployment, and data drift detection.",
+        "Explore distributed system design patterns, focusing on state management across nodes, consensus algorithms, and advanced rate limiting techniques (e.g., using Redis for distributed counters, consistent hashing).",
+        "Deepen understanding of concurrency primitives beyond basic mutexes and reader-writer locks, including lock-free data structures, atomic operations, and memory models.",
+        "Practice system design problems involving distributed components, scalability challenges, and real-time data processing."
+      ],
+      "summary": "Prikshit demonstrates exceptional strength in cloud architecture, security design, and distributed data consistency, particularly within the AWS ecosystem. Their ability to articulate complex concepts like DynamoDB's Last Writer Wins and S3's consistency models, along with practical solutions for multi-region data integrity, is highly impressive. They also show a strong command of recommendation system design, including advanced techniques for cold start and data sparsity. However, significant gaps were identified in MLOps, large-scale machine learning deployment, and distributed rate limiting, where the candidate lacked fundamental knowledge. While their core software engineering and DSA skills are solid, the lack of experience in certain distributed systems and MLOps areas indicates a need for further development in these specialized domains. Given their strong foundational knowledge in cloud and distributed systems, Prikshit is a promising candidate for roles that heavily leverage AWS and require robust system design, but would benefit from targeted study in MLOps and advanced distributed system patterns. I recommend a Conditional Hire with a focus on upskilling in MLOps and distributed system design."
+    }
+  },
+  "interview_state": {
+    "current_question_number": 8,
+    "current_category": "DSA & CS Fundamentals",
+    "current_difficulty": "Medium",
+    "question_history": [
+      "In your Secure Cloud-Based File Storage System project, detail the architecture you designed to ensure data security and integrity. Specifically, explain the complete data lifecycle from a user initiating an upload to its retrieval, highlighting the security mechanisms implemented at each stage. This should include how you handled authentication, authorization, data encryption (both in-transit and at-rest), and how AWS EC2 and S3 services were integrated to provide these security features. Furthermore, discuss any specific security challenges or trade-offs you encountered and how you addressed them.",
+      "Considering your Secure Cloud-Based File Storage System, how would you evolve its architecture to support petabytes of data and millions of concurrent users globally? Detail your approach to ensuring high availability, disaster recovery, and strong data consistency across multiple AWS regions. Furthermore, identify and explain any new security challenges that emerge at this scale and how your design would mitigate them.",
+      "You mentioned using DynamoDB Global Tables for multi-region consistency. Can you elaborate on the specific consistency model DynamoDB Global Tables provide and how that choice impacts your application's design, especially for critical operations? Furthermore, considering S3's eventual consistency model, how would you architect your system to ensure data integrity and strong consistency for metadata or critical file operations that rely on S3 data being immediately available and consistent across regions?",
+      "Considering the deployment of a large-scale, real-time recommendation system (like your Movie Recommendation System, but scaled globally), how would you design an MLOps pipeline to ensure continuous model improvement, low-latency inference, and handle data drift effectively across multiple geographic regions? Specifically, discuss strategies for distributed model training, A/B testing in production, and mechanisms for automated model retraining and deployment without service interruption.",
+      "In your Movie Recommendation System, you likely encountered challenges beyond just basic collaborative filtering. Can you explain the 'cold start problem' and 'data sparsity' in the context of recommendation systems? How would you design a hybrid recommendation system that effectively addresses these issues, combining different approaches to provide robust recommendations even for new users or items, and what are the trade-offs involved in such a hybrid approach?",
+      "Design a high-performance, thread-safe in-memory cache with a configurable eviction policy (e.g., LRU, LFU). Detail the data structures you would use, the synchronization mechanisms required to handle concurrent access efficiently, and how you would manage memory and prevent common concurrency issues like deadlocks or race conditions. Discuss the trade-offs between different eviction policies and their impact on cache performance under various workloads.",
+      "Design a highly available and scalable distributed rate limiter that can handle millions of requests per second across multiple service instances. Explain the algorithms you would consider (e.g., Leaky Bucket, Token Bucket), how you would manage the state of the rate limiter across distributed nodes, and the trade-offs involved in ensuring both accuracy and performance. Discuss potential failure scenarios and how your design would gracefully handle them.",
+      "Given a binary tree, design an algorithm to find the lowest common ancestor (LCA) of two given nodes, `p` and `q`. Your algorithm should handle cases where `p` or `q` might not be present in the tree, or if one is an ancestor of the other. Analyze the time and space complexity of your solution."
+    ],
+    "answer_history": [
+      "For the Secure Cloud-Based File Storage System, the architecture employs HTTPS for secure data in-transit, utilizing TLS 1.3 protocol. User authentication and authorization are managed through AWS Cognito, issuing JWT tokens. Upon upload, data flows to AWS EC2 instances running behind an Application Load Balancer. The EC2 instance intercepts the file, validates the user's JWT token, and computes a SHA-256 checksum to ensure integrity. The file is then encrypted on the EC2 instance using AES-256 encryption via AWS Key Management Service (KMS) customer-managed keys before being written to an AWS S3 bucket. The S3 bucket is configured with private access control lists, block public access enabled, and server-side encryption with KMS keys (SSE-KMS) as a secondary defense layer. For retrieval, the user requests a pre-signed URL with a short expiration window (e.g., 15 minutes) generated via the EC2 API, ensuring temporary, authorized direct download from S3. Trade-offs included latency overhead due to double encryption layers, which was mitigated by tuning thread pools on EC2.",
+      "To support millions of users globally and petabytes of data, I would use multi-region deployment. I would use Route 53 for geo-routing to direct users to the closest AWS region. S3 cross-region replication can copy the data across regions for disaster recovery. For database consistency, I would use Amazon DynamoDB global tables. Security challenges would include managing encryption keys globally, which I would handle using multi-region AWS KMS keys.",
+      "DynamoDB Global Tables provide active-active replication across selected AWS regions, employing a 'Last Writer Wins' (LWW) conflict resolution policy based on system timestamps. This means local writes are immediately consistent locally (supporting strongly consistent reads if requested in the local region), but replication to other regions is eventually consistent (typically sub-second). For critical operations like transaction validation, this requires designing idempotent APIs and using unique transaction identifiers to detect conflicts. To address S3's consistency model, we leverage the fact that Amazon S3 now offers strong read-after-write consistency for PUT and DELETE operations of objects in all buckets by default. However, for multi-region cross-region replication (CRR), replication is eventual. To ensure immediate global consistency of critical file metadata, we do not read directly from the S3 replica in the secondary region. Instead, we write and read metadata from a single source of truth - the DynamoDB global tables. When a file is uploaded to the primary S3 bucket, its metadata (including checksum, version ID, and upload status) is written to DynamoDB. Secondary regions read metadata from DynamoDB first; if they need to fetch the file, they use the S3 version ID. If a replica is not yet available in the secondary region's S3, the application falls back to fetching the object from the primary region's S3 bucket using a cross-region read, ensuring 100% read consistency at the expense of temporary latency.",
+      "I would train the model locally using Python and then save it to a file. Then I will upload the file to a server and load it in python. If the model becomes old, I will manually run the training script again to update the model. I don't know much about A/B testing or distributed model training.",
+      "The cold start problem occurs when a new user or item enters the system, lacking historical interaction data (ratings/clicks) to compute collaborative filtering recommendations. Data sparsity refers to the challenge where the user-item interaction matrix is extremely sparse (often >99.9% empty), making it hard to find similar users or items. To address these, I would design a hybrid recommendation system combining Collaborative Filtering (CF) and Content-Based Filtering (CBF). For new items, a CBF model extracts features (e.g., movie genre, cast, plot embeddings using BERT) to match against user profiles. For new users, a heuristic-based active learning step (asking preferences during onboarding) creates an initial user profile, supplemented by demographic filtering. The hybrid system combines CF and CBF using a late fusion stacking model: a Gradient Boosted Decision Tree (GBDT) or a neural network that takes the prediction scores of both CF and CBF as inputs, alongside contextual features (time of day, device). Trade-offs include increased computational complexity, latency in real-time inference, and the need to maintain duplicate feature stores for content metadata and interaction logs.",
+      "To design a thread-safe in-memory cache, I would use a hash map combined with a doubly linked list for LRU eviction. To make it thread-safe, I can use a programming language's built-in concurrent map or wrap access in mutex locks. To implement LFU, I would need a frequency map instead. Synchronization can be done using a reader-writer lock (shared lock for reads, exclusive lock for writes) to allow concurrent reads. The trade-off is that mutexes can slow down performance under high concurrent writes.",
+      "I would use an if statement inside a loop to check if the count is greater than 10. If it is, I will print access denied. I don't know how to distribute it across servers.",
+      "To find the Lowest Common Ancestor (LCA) of two nodes p and q in a binary tree where one or both nodes might be missing, a standard post-order traversal DFS is insufficient because it cannot distinguish between 'node not found' and 'LCA not found' without scanning the entire tree. We use a two-pass approach or a single pass that returns a custom result object. In a single-pass DFS, we return a tuple/object containing three flags: found_p, found_q, and the lca_node. For any subtree: we check if the current node is p or q and query the left and right subtrees. The left subtree returns (left_p, left_q, left_lca) and the right subtree returns (right_p, right_q, right_lca). The current node's flags are updated: curr_p = left_p or right_p or (node == p) and curr_q = left_q or right_q or (node == q). If left_lca is already found, we propagate it up; same for right_lca. If both curr_p and curr_q become true at the current node for the first time, then the current node is the LCA. The time complexity is O(N) where N is the number of nodes in the binary tree, as we visit each node at most once. The space complexity is O(H) where H is the height of the tree, due to the recursion stack (which is O(N) in the worst case of a skewed tree, and O(log N) for a balanced tree)."
+    ],
+    "evaluation_history": [
+      {
+        "accuracy": 5,
+        "depth": 5,
+        "confidence": 4,
+        "clarity": 5
+      },
+      {
+        "accuracy": 4,
+        "depth": 3,
+        "confidence": 4,
+        "clarity": 4
+      },
+      {
+        "accuracy": 5,
+        "depth": 5,
+        "confidence": 5,
+        "clarity": 5
+      },
+      {
+        "accuracy": 1,
+        "depth": 1,
+        "confidence": 2,
+        "clarity": 4
+      },
+      {
+        "accuracy": 5,
+        "depth": 5,
+        "confidence": 5,
+        "clarity": 5
+      },
+      {
+        "accuracy": 3,
+        "depth": 2,
+        "confidence": 3,
+        "clarity": 4
+      },
+      {
+        "accuracy": 1,
+        "depth": 1,
+        "confidence": 1,
+        "clarity": 3
+      },
+      {
+        "accuracy": 5,
+        "depth": 5,
+        "confidence": 5,
+        "clarity": 5
+      }
+    ],
+    "overall_technical_score": 75.0,
+    "confidence_trend": [
+      4,
+      4,
+      5,
+      2,
+      5,
+      3,
+      1,
+      5
+    ],
+    "current_strength_areas": [
+      "Comprehensive understanding of cloud security best practices (in-transit, at-rest encryption, authentication, authorization).",
+      "Ability to integrate multiple AWS services (Cognito, EC2, S3, KMS) for a robust security solution.",
+      "Detailed explanation of security mechanisms at each stage of the data lifecycle.",
+      "Awareness of performance trade-offs and practical mitigation strategies (e.g., thread pool tuning).",
+      "Strong grasp of defense-in-depth principles (e.g., double encryption, S3 bucket policies).",
+      "Identified appropriate AWS services for global scale (Route 53, S3 cross-region replication, DynamoDB global tables, multi-region KMS).",
+      "Understood the need for multi-region deployment for high availability and disaster recovery.",
+      "Deep understanding of distributed consistency models (DynamoDB Global Tables, S3)",
+      "Awareness of recent AWS service updates (S3 strong consistency)",
+      "Ability to design robust multi-region architectures for data integrity and consistency",
+      "Practical understanding of architectural trade-offs (latency vs. consistency)",
+      "Proposing concrete solutions for complex distributed system challenges",
+      "Acknowledged limitations in knowledge regarding advanced MLOps concepts.",
+      "Clear communication of current understanding.",
+      "Strong understanding of core recommendation system challenges (cold start, data sparsity)",
+      "Knowledge of hybrid recommendation system architectures",
+      "Ability to propose sophisticated model combination techniques (late fusion, stacking with GBDT/NN)",
+      "Awareness of advanced feature engineering (BERT embeddings)",
+      "Consideration of practical trade-offs (computational complexity, latency)",
+      "Identified correct basic data structures for LRU (hash map + doubly linked list)",
+      "Understood the need for synchronization (mutexes, reader-writer locks)",
+      "Clear communication of basic concepts",
+      "Provided a technically accurate and detailed explanation of the single-pass DFS approach for LCA.",
+      "Correctly identified the necessary flags and recursive logic.",
+      "Accurately analyzed the time and space complexity, including worst-case scenarios for space."
+    ],
+    "current_weak_areas": [
+      "Lacked detailed explanation on *how* the chosen services achieve the stated goals (e.g., specific consistency models, trade-offs).",
+      "Did not elaborate on the architectural patterns or deeper implications of scaling to petabytes and millions of users beyond listing services.",
+      "Lack of understanding of MLOps principles for continuous improvement and deployment.",
+      "No knowledge of distributed model training.",
+      "No knowledge of A/B testing in production.",
+      "Did not address data drift or automated retraining mechanisms.",
+      "Did not address scalability for low-latency inference or multi-region deployment.",
+      "Lacked depth in explaining how data structures work together for LRU/LFU",
+      "Did not detail the LFU data structure beyond a 'frequency map'",
+      "Did not address memory management or prevention of deadlocks/race conditions in detail",
+      "Did not discuss trade-offs between different eviction policies as requested",
+      "Explanation was too brief for an 'Expert' level question",
+      "Lack of understanding of distributed systems concepts",
+      "No knowledge of common rate limiting algorithms (e.g., Token Bucket, Leaky Bucket)",
+      "Inability to design for scalability and high availability",
+      "Fundamental misunderstanding of system design principles for concurrent and distributed environments"
+    ]
+  },
+  "category_sequence": [
+    "Resume & Projects",
+    "Resume & Projects",
+    "Resume & Projects",
+    "AI/ML",
+    "AI/ML",
+    "Software Engineering",
+    "Software Engineering",
+    "DSA & CS Fundamentals"
+  ],
+  "extracted_text": "PRIKSHIT SHARMA\nLudhiana, Punjab, India\n—\n+91-6283365717\n—\npsharma12 be23@thapar.edu\n—\nlinkedin.com/in/prikshit-sharma-89a1ba372\nSummary\nElectronics & Computer Science undergraduate at Thapar Institute of Engineering & Technology (2023–2027) with\nstrong foundations in data structures, algorithms, and software development. Proficient in C++ and Python\nwith hands-on experience in building and deploying systems across cloud and hardware platforms. Solved 300+\nLeetCode problems, demonstrating strong problem-solving ability. Interested in developing efficient, scalable software\nsystems and gaining practical experience in development, testing, and system design.\nEducation\nThapar Institute of Engineering and Technology, Patiala\n2023–2027\nB.E. in Electronics and Computer Science\nCurrent CGPA: 9.0/10\nBCM School, Sec-32A, Ludhiana\n2022–2023\nClass XII (CBSE) — 92.8%\nAchievements & Certifications\n- Awarded Merit-III Scholarship for outstanding academic performance (2023–24).\n- Cisco Networking Academy: Introduction to AI, Data Science Essentials.\n- NVIDIA Deep Learning Institute: Getting Started with Deep Learning.\n- NxtWave OpenAI Academy: Generative AI Buildathon (2025).\nProjects\n5-Bit Shift Register on FPGA\nVerilog, Xilinx ISE\n- Designed and implemented a 5-bit parallel-in/parallel-out shift register with asynchronous preset and clear using Verilog\nHDL\n- Simulated, synthesized, and deployed the design on Spartan-6 FPGA (Atlys board)\n- Verified RTL behavior and tested multiple cases including parallel loading, serial shifting, and reset conditions\n- Mapped inputs/outputs using UCF constraints and validated functionality on physical hardware\nSecure Cloud-Based File Storage System\nAWS EC2, S3\n- Designed and deployed a cloud-based file storage system using AWS EC2 and S3\n- Implemented S3 versioning, replication, and backup mechanisms for data redundancy\n- Hosted frontend using S3 static website hosting and deployed backend on EC2 instance\n- Configured IAM roles and policies to securely manage access between services\n- Tested system functionality including file upload, storage, replication, and access control\nMovie Recommendation System\nPython, Pandas\n- Built a recommendation system to suggest movies using collaborative and content-based filtering\n- Processed and analyzed dataset of 10k+ user ratings to generate personalized results\n- Evaluated system performance using accuracy metrics and improved recommendation quality\nSkills\nProgramming: C++, Python, SQL\nCore Concepts: Data Structures & Algorithms, OOP\nTools: Git, REST APIs, Linux/Windows\nEngineering Tools: MATLAB, FPGA (Basic)\nLibraries: NumPy, Pandas\nOther:\nProblem Solving (300+ LeetCode), Debugging,\nSDLC Basics"
+}

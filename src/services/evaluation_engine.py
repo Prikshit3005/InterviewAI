@@ -37,6 +37,30 @@ class EvaluationEngine:
         if not session.history:
             raise EvaluationEngineError("Cannot generate a report for an empty interview session.")
 
+        if settings.DEV_MODE:
+            from src.services.session_storage import SessionStorageService
+            saved_data = SessionStorageService.load_session()
+            if not saved_data:
+                raise EvaluationEngineError("Failed to load demo session from disk.")
+                
+            saved_session_dict = saved_data["interview_session"]
+            report_dict = saved_session_dict.get("report")
+            if not report_dict:
+                raise EvaluationEngineError("Report is missing in the demo session.")
+                
+            report = InterviewReport(**report_dict)
+            
+            # Also populate evaluations into history
+            saved_history = saved_session_dict.get("history", [])
+            for i, qa in enumerate(session.history):
+                if i < len(saved_history):
+                    saved_eval = saved_history[i].get("evaluation")
+                    if saved_eval:
+                        qa.evaluation = AnswerEvaluation(**saved_eval)
+                    else:
+                        qa.evaluation = None
+            return report
+
         if not settings.GEMINI_API_KEY:
             raise EvaluationEngineError("Gemini API key is not configured. Please add GEMINI_API_KEY to your .env file.")
 

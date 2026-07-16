@@ -1,5 +1,5 @@
 import streamlit as st
-from config.settings import APP_TITLE, APP_ICON, MAX_FILE_SIZE_MB, ALLOWED_EXTENSIONS, DEFAULT_QUESTION_COUNT
+from config.settings import APP_TITLE, APP_ICON, MAX_FILE_SIZE_MB, ALLOWED_EXTENSIONS, DEFAULT_QUESTION_COUNT, DEV_MODE
 from src.services.resume_parser import ResumeParserService, ResumeParsingError
 from src.services.gemini_client import GeminiClientService, GeminiClientError
 from src.services.interview_engine import InterviewEngine, InterviewEngineError
@@ -838,6 +838,11 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+if DEV_MODE:
+    from src.services.session_storage import SessionStorageService
+    if not SessionStorageService.session_exists():
+        st.warning("⚠️ No demo session found. Run one complete interview in Production Mode first.")
+
 if st.session_state.get("interview_session") is None:
     # ---------------------------------------------------------
     # VIEW A: Setup, Parsing & Analysis Screen
@@ -1033,6 +1038,15 @@ else:
                     report = EvaluationEngine.generate_report(session)
                     session.report = report
                     st.session_state["interview_session"] = session
+                    if not DEV_MODE:
+                        from src.services.session_storage import SessionStorageService
+                        SessionStorageService.save_session(
+                            profile=st.session_state.get("candidate_profile"),
+                            session=session,
+                            state=st.session_state.get("interview_state"),
+                            category_sequence=st.session_state.get("category_sequence"),
+                            extracted_text=st.session_state.get("extracted_text")
+                        )
                     st.rerun()
                 except EvaluationEngineError as e:
                     err_str = str(e)

@@ -473,6 +473,45 @@ class InterviewEngine:
         
         session_id = str(uuid.uuid4())
         
+        if settings.DEV_MODE:
+            from src.services.session_storage import SessionStorageService
+            if not SessionStorageService.session_exists():
+                raise InterviewEngineError("No demo session found. Run one complete interview in Production Mode first.")
+            
+            saved_data = SessionStorageService.load_session()
+            if not saved_data:
+                raise InterviewEngineError("Failed to load demo session from disk.")
+                
+            saved_session_dict = saved_data["interview_session"]
+            saved_state_dict = saved_data["interview_state"]
+            category_sequence = saved_data.get("category_sequence")
+            st.session_state["category_sequence"] = category_sequence
+            
+            saved_questions = [Question(**q) for q in saved_session_dict["questions"]]
+            
+            state = InterviewState(
+                current_question_number=1,
+                current_category=saved_questions[0].category,
+                current_difficulty=saved_state_dict.get("current_difficulty", "Medium"),
+                question_history=[saved_questions[0].text],
+                answer_history=[],
+                evaluation_history=[],
+                overall_technical_score=0.0,
+                confidence_trend=[],
+                current_strength_areas=[],
+                current_weak_areas=[]
+            )
+            st.session_state["interview_state"] = state
+            
+            return InterviewSession(
+                session_id=saved_session_dict["session_id"],
+                candidate_profile=profile,
+                questions=[saved_questions[0]],
+                history=[],
+                current_question_index=0,
+                is_completed=False
+            )
+
         # Plan the sequence of categories
         category_sequence = InterviewEngine.get_category_sequence(count)
         st.session_state["category_sequence"] = category_sequence
@@ -535,6 +574,89 @@ class InterviewEngine:
         # Prepare next category
         next_category = category_sequence[min(session.current_question_index + 1, DEFAULT_QUESTION_COUNT - 1)]
         
+        if settings.DEV_MODE:
+            from src.services.session_storage import SessionStorageService
+            saved_data = SessionStorageService.load_session()
+            if not saved_data:
+                raise InterviewEngineError("Failed to load demo session from disk.")
+                
+            saved_session_dict = saved_data["interview_session"]
+            saved_state_dict = saved_data["interview_state"]
+            
+            curr_idx = session.current_question_index
+            saved_eval_history = saved_state_dict.get("evaluation_history", [])
+            saved_questions = saved_session_dict.get("questions", [])
+            
+            evaluation_scores = saved_eval_history[curr_idx] if curr_idx < len(saved_eval_history) else {"accuracy": 4, "depth": 4, "confidence": 4, "clarity": 4}
+            
+            saved_history = saved_session_dict.get("history", [])
+            if curr_idx < len(saved_history):
+                saved_qa = saved_history[curr_idx]
+                saved_eval = saved_qa.get("evaluation")
+                new_strengths = saved_eval.get("strengths", []) if saved_eval else []
+                new_weaknesses = saved_eval.get("weaknesses", []) if saved_eval else []
+            else:
+                new_strengths = []
+                new_weaknesses = []
+                
+            # Simulate difficulty transition clipping
+            avg_score = sum(evaluation_scores.values()) / 4.0
+            difficulties = ["Easy", "Medium", "Hard", "Expert"]
+            curr_diff_idx = difficulties.index(state.current_difficulty)
+            if avg_score >= 4.0:
+                new_diff = difficulties[min(curr_diff_idx + 1, len(difficulties) - 1)]
+            elif avg_score < 2.5:
+                new_diff = difficulties[max(curr_diff_idx - 1, 0)]
+            else:
+                new_diff = state.current_difficulty
+                
+            # Append QA pair to session history
+            qa_pair = QAPair(
+                question=current_q,
+                user_answer=answer.strip(),
+                evaluation=None
+            )
+            session.history.append(qa_pair)
+            
+            # Update the state history lists
+            state.answer_history.append(answer)
+            state.evaluation_history.append(evaluation_scores)
+            state.confidence_trend.append(evaluation_scores["confidence"])
+            
+            for s in new_strengths:
+                if s not in state.current_strength_areas:
+                    state.current_strength_areas.append(s)
+            for w in new_weaknesses:
+                if w not in state.current_weak_areas:
+                    state.current_weak_areas.append(w)
+                    
+            total_eval_score = 0.0
+            for ev in state.evaluation_history:
+                total_eval_score += sum(ev.values())
+            max_possible = len(state.evaluation_history) * 20.0
+            state.overall_technical_score = round((total_eval_score / max_possible) * 100.0, 1) if max_possible > 0 else 0.0
+            
+            if curr_idx < DEFAULT_QUESTION_COUNT - 1:
+                next_q_data = saved_questions[curr_idx + 1]
+                next_q = Question(
+                    id=next_q_data.get("id", f"Q{curr_idx + 2}"),
+                    text=next_q_data.get("text", ""),
+                    category=next_q_data.get("category", "Resume & Projects"),
+                    topic=next_q_data.get("topic", "")
+                )
+                session.questions.append(next_q)
+                
+                state.current_question_number = curr_idx + 2
+                state.current_category = next_q.category
+                state.current_difficulty = new_diff
+                state.question_history.append(next_q.text)
+            else:
+                session.is_completed = True
+                
+            session.current_question_index += 1
+            st.session_state["interview_state"] = state
+            return
+
         # Format the history list for prompt context
         formatted_history = []
         for i, qa in enumerate(session.history):
