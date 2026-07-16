@@ -30,6 +30,15 @@ class GeminiClientService:
         Raises:
             GeminiClientError: If the API key is missing, API request fails, or validation fails.
         """
+        if settings.DEV_MODE:
+            from src.services.session_storage import SessionStorageService
+            if not SessionStorageService.session_exists():
+                raise GeminiClientError("No demo session found. Run one complete interview in Production Mode first.")
+            saved_data = SessionStorageService.load_session()
+            if saved_data and saved_data.get("candidate_profile"):
+                return CandidateProfile(**saved_data["candidate_profile"])
+            raise GeminiClientError("Demo session file is missing candidate profile.")
+
         if not settings.GEMINI_API_KEY:
             raise GeminiClientError(
                 "Gemini API key is not configured. "

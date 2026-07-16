@@ -42,3 +42,10 @@ CATEGORY_WEIGHTS = {
 # API Configuration
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 GEMINI_MODEL_NAME = "gemini-2.5-flash"
+
+# Mode configuration (Production / Development)
+DEV_MODE = os.getenv("DEV_MODE", "False").strip().lower() == "true"
+if DEV_MODE:
+    print("Running in DEVELOPMENT MODE (Offline Dataset)", flush=True)
+else:
+    print("Running in PRODUCTION MODE (Gemini Enabled)", flush=True)
